@@ -52,4 +52,21 @@ client.on("ready", () =>{
 
 });
 
-client.on("")
+client.on("interactionCreate", async interaction => {
+    if(!interaction.isCommand()) return;
+
+    const command = client.commands.get(interaction.commandName);
+    if (!command) return;
+
+    try
+    {
+        await command.execute({client, interaction});
+
+    }
+    catch(err)
+    {
+        console.error(err);
+        await interaction.reply("An error occurred while executing that command.");
+
+    }
+});
