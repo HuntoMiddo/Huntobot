@@ -1,1 +1,1 @@
-Discord bot for me and my friends lol
+Discord bot for me and my friends
